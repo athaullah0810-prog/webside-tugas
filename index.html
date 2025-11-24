@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="stylelogin.css" />
+  </head>
+  <body>
+<!--bagroud video-->
+    <video autoplay loop muted playsinline id="bg-video">
+      <source src="./video/begroud.mp4" type="video/mp4">
+    </video>
+
+    
+    <div class="card">
+      <h2>Login</h2>
+
+      <input type="text" id="loginUser" placeholder="Username" />
+      <input type="password" id="loginPass" placeholder="Password" />
+
+      <button onclick="login()">Login</button>
+
+      <p>Belum punya akun? <a href="register.html">Register</a></p>
+    </div>
+
+    <audio id="bg-audio" src="audio/Rizky Febian & Adrian Khalif - Alamak (Official Lyric Video) [OErndIcI8gE].mp3" autoplay muted loop></audio>
+
+<script>
+const audio = document.getElementById("bg-audio");
+
+audio.play().then(() => {
+    audio.muted = false;
+}).catch(() => {
+    // kalau gagal, tampilkan tombol
+    const btn = document.createElement("button");
+    btn.innerText = "Nyalakan Audio";
+    btn.style.position = "absolute";
+    btn.style.top = "20px";
+    btn.style.right = "20px";
+    btn.onclick = () => {
+        audio.muted = false;
+        audio.play();
+        btn.remove();
+    };
+    document.body.appendChild(btn);
+});
+</script>
+
+    <script src="./js/scerp.js"></script>
+  </body>
+</html>

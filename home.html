@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - TUGAS PROGRAM</title>
+    <link rel="stylesheet" href="./css/home.css">
+</head>
+<body>
+
+    <!-- LOADING SCREEN -->
+    <div id="loading">
+        <div class="spinner"></div>
+        <p>Loading...</p>
+    </div>
+
+    <!-- SIDEBAR -->
+    <div id="sidebar" class="sidebar">
+        <h2>Menu</h2>
+        <a href="tugas index.html">TUGAS Index Html</a>
+        <a href="#" id="openProfile">Profil</a>
+        <a href="tugas css.html">Tugas belajar css</a>
+        <a href="./html/Belajar java scrib.html">belajar js</a>
+        <a href="./html/css animasi login.html">animasi css</a>
+        <a href="./html/efek hover pada card.html">efec hover pada card</a>
+        <a href="./html/resfonsip css card hover effect.html">efek hover card</a>
+        <a href="./html/website interaktif.html">interaktif</a>
+        <a href="#" id="logoutBtn">Logout</a>
+    </div>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div id="menuBtn" class="menu-btn">☰</div>
+        <div class="logo">WEB Depan Utama</div>
+        <div class="darkToggle" id="darkBtn">mode</div>
+    </nav>
+
+    <!-- CONTENT -->
+    <section class="content">
+        <h1 class="title">Selamat Datang <span id="userShow"></span> Di web tugas </h1>
+        <p>INI ADALAH WEH YANG SAYA BUAT UNTUK TUGAS SAYA DI KELAS 10 INI SEMOGA KALIAN SUKA</p>
+
+        <label class="uploadBox">
+            Ganti Background/Latar belakang
+            <input type="file" id="bgUpload" accept="image/*">
+        </label>
+    </section>
+
+    <!-- PROFILE POPUP -->
+    <div class="profile-popup" id="profilePopup">
+        <div class="profile-box">
+            <h2>Profil Kamu</h2>
+            <img id="profilePic" src="defaultpfp.png">
+            <input type="file" id="pfpUpload" accept="image/*">
+
+            <p>Username: <span id="profileUser"></span></p>
+
+            <button id="closeProfile">Tutup</button>
+        </div>
+    </div>
+
+     <audio id="bg-audio" src="./audio/Ngga Dulu - Akbar Chalay feat. Ciloqciliq & Zynakal (Lyrics).mp3" autoplay muted loop></audio>
+<script>
+const audio = document.getElementById("bg-audio");
+
+audio.play().then(() => {
+    audio.muted = false;
+}).catch(() => {
+    // kalau gagal, tampilkan tombol
+    const btn = document.createElement("button");
+    btn.innerText = "Nyalakan Audio";
+    btn.style.position = "absolute";
+    btn.style.top = "20px";
+    btn.style.right = "20px";
+    btn.onclick = () => {
+        audio.muted = false;
+        audio.play();
+        btn.remove();
+    };
+    document.body.appendChild(btn);
+});
+
+</script>
+
+    <script src="./js/home.js"></script>
+</body>
+</html>
